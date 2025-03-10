@@ -188,12 +188,14 @@ def quote_page():
     author = authors[random_number]
     this_quote.insert("4.0", author, "center")
 
+    this_quote.insert("5.0", new_line, "center")
+
     frame10 = tk.Frame(quotation, bg="#0f0f0f")
     frame10.grid(row=2, column=3, columnspan=2, sticky='nsew')
 
     def again():
         random_number = random.randint(0, len(quotes) - 1)
-        this_quote.delete("2.0", "4.0")
+        this_quote.delete("1.0", "5.0")
 
         quote = quotes[random_number]
         this_quote.insert("2.0", quote, "center")
